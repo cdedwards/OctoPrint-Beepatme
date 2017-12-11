@@ -18,7 +18,12 @@ $(function() {
             if (plugin != "beepatme") {
                 return;
             }
-            self.settings.playAudio();
+			
+			if(data.type == "reload") {
+				window.location.reload(true);
+			} else {
+				self.settings.playAudio();
+			}
         }
     }
 
