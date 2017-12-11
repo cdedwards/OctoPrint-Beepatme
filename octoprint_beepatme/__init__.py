@@ -34,7 +34,7 @@ class BeepatmePlugin(octoprint.plugin.SettingsPlugin,
 
 	def get_template_configs(self):
 		return [
-			dict(type="settings", custom_bindings=False)
+			dict(type="settings", custom_bindings=False, name="Beep At Me")
 		]
 
 	def get_update_information(self):
