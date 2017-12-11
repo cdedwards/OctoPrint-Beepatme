@@ -19,11 +19,9 @@ class BeepatmePlugin(octoprint.plugin.SettingsPlugin,
 
 	def on_event(self, event, payload): #oh yeah, note to self: mess about with this malarky. print cancel, print done, maybe print started? I dunno how far I wanna go
 		if "PrintDone" not in event:	#either way, fix it
-			return event 
-			return payload
+			return (event, payload)
 		self._plugin_manager.send_plugin_message(self._identifier, dict(done=True)) 
-		return event 
-		return payload
+		return (event, payload)
 
 	def get_assets(self):
 		return dict(

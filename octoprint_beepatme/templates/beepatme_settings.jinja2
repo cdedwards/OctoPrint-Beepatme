@@ -8,18 +8,32 @@
                 <span class="add-on">%</span>
             </div>
             <span class="help-block">{{ _('Audio volume level: 0 - 100') }}%</span>
-            <button class="btn btn-block" style="width: 169px" data-bind="click: function() { $root.playAudio() }">{{ _('Test Audio') }}</button>
         </div>
     </div>
-    <!-- not yet implemented
     <div class="control-group">
         <label class="control-label">{{ _('Sound File') }}</label>
         <div class="controls">
             <div class="input-append input-block-level">
                 <input type="text" class="input" data-bind="value: settings.plugins.beepatme.soundFile">
-                <span class="add-on">Reset</span>
+                <span class="add-on">wav / ogg / mp3</span>
             </div>
-            <span class="help-block">{{ _('Path to the audio file on the octoprint server') }}</span>
+            <span class="help-block">{{ _('Path to the audio file (must be reachable from your browser)') }}</span>
         </div>
-    </div>-->
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button class="btn btn-block" style="width: 169px" data-bind="click: function() { $root.playAudio() }">{{ _('Test Audio') }}</button>
+        </div>
+    </div>
 </form>
+<div>
+    <span class="help-block">
+        {{ _('A note on the audio file.') }}
+    </span>
+    <span class="help-block">
+        {{ _('The supported audio file format will <a href="https://www.w3schools.com/tags/tag_audio.asp" target="_blank">vary between browsers</a>, and the source file must be reachable via your browser\'s URL bar. Some browsers may block the loading of "local" resources (files loaded from a local or network mapped drive) and so anything prefixed with') }} <code>file:///</code> {{'probably won\'t work, but audio files stored "in the cloud" might (assuming the hosting service is reachable, and allows hotlinking of files).'}}
+    </span>
+    <span class="help-block">
+        {{'The default path to the audio file (in case you\'ve altered it) is:'}} <code>/plugin/beepatme/static/audio/audio.mp3</code>
+    </span>
+</div>
