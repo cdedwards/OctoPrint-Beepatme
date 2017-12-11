@@ -52,7 +52,7 @@ class BeepatmePlugin(octoprint.plugin.SettingsPlugin,
 			octoprint.filemanager.util.StreamWrapper(self.get_plugin_data_folder() + "/uploaded" + extension, file_object.stream()).save(self.get_plugin_data_folder() + "/uploaded" + extension)
 			self._settings.set(["soundFile"],"/plugin/beepatme/uploaded" + extension)
 			self._settings.save()
-			self._plugin_manager.send_plugin_message(self._identifier, dict(type="reload"))
+			self._plugin_manager.send_plugin_message(self._identifier, dict(cmd="reload"))
 		return file_object
 
 	def get_update_information(self):
