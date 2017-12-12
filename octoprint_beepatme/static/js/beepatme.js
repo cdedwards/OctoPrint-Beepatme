@@ -20,7 +20,7 @@ $(function() {
             }
 			
 			if(data.cmd == "reload") {
-				window.location.reload(true);
+				window.location.reload();
 			} else {
 				self.settings.playAudio();
 			}
